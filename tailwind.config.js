@@ -8,21 +8,28 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xxl: "2560px",
-        xl: "1920px",
-        xss: "500px",
-        xsss: "460px",
-        xssss: "350px",
-        md: "650px",
-        // lg: "768px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
       },
       colors: {
-        primary: "#1030ff",
-        secondary: "#272727",
+        customGreen: "rgb(0, 80, 60)",
+        primary: {
+          DEFAULT: "#1030ff",
+          light: "#506eff",
+          dark: "#0b23b3",
+        },
+        secondary: {
+          DEFAULT: "#272727",
+          light: "#3d3d3d",
+          dark: "#1b1b1b",
+        },
       },
       width: {
         inherit: "inherit",
@@ -32,5 +39,5 @@ module.exports = {
       center: true,
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };
