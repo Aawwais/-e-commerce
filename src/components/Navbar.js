@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Cart from "./Cart";
 import LocationSetting from "./LocationSetting";
@@ -32,12 +32,23 @@ export default function Navbar() {
       closeLocationSetting();
     }
   };
+  useEffect(() => {
+    if (isCartOpen || isLocationSettingOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isCartOpen, isLocationSettingOpen]);
 
   return (
     <nav className="bg-customGreen shadow-md ">
-      <div class="container mx-auto">
-        <div class="grid grid-cols-12 gap-4 px-3">
-          <div class="col-span-9 md:col-span-5 order-2 md:order-1 flex justify-end  md:justify-start items-center">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-12 gap-4 px-3">
+          <div className="col-span-9 md:col-span-5 order-2 md:order-1 flex justify-end  md:justify-start items-center">
             <button className="flex items-center mr-2 sm:mr-5 py-4 ">
               <MdLocationOn
                 size={25}
@@ -57,7 +68,7 @@ export default function Navbar() {
               0305-9508153
             </Link>
           </div>
-          <div class="col-span-3 md:col-span-2 order-1 md:order-2 flex justify-start  md:justify-center  items-center">
+          <div className="col-span-3 md:col-span-2 order-1 md:order-2 flex justify-start  md:justify-center  items-center">
             <Link href="/">
               {/* <Image
                 height="110"
@@ -73,7 +84,7 @@ export default function Navbar() {
               />
             </Link>
           </div>
-          <div class="hidden md:flex  md:col-span-5 md:order-3  justify-end items-center">
+          <div className="hidden md:flex  md:col-span-5 md:order-3  justify-end items-center">
             <button onClick={openCart} className="relative mr-5">
               <FaShoppingCart size={24} color="white" />
               <span className="absolute  bottom-2.5  bg-customGreen border-2 text-white rounded-full text-xs px-2 py-1">
@@ -94,13 +105,13 @@ export default function Navbar() {
       {(isCartOpen || isLocationSettingOpen) && (
         <div
           id="overlay"
-          className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out"
+          className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out z-10"
           onClick={handleOutsideClick}
         />
       )}
 
       <div
-        className={`fixed right-0 top-0 transition-all duration-700 ease-in-out 
+        className={`fixed z-10 right-0 top-0 transition-all duration-700 ease-in-out 
           ${isCartOpen ? "w-80 opacity-100" : "w-0 opacity-0"}
           h-full bg-white shadow-lg border-l border-gray-200 overflow-hidden`}
       >
@@ -118,7 +129,7 @@ export default function Navbar() {
         </div>
       </div>
       <div
-        className={`fixed right-0 top-0 transition-all duration-700 ease-in-out 
+        className={`fixed z-10 right-0 top-0 transition-all duration-700 ease-in-out 
           ${isLocationSettingOpen ? "w-80 opacity-100" : "w-0 opacity-0"}
           h-full bg-white shadow-lg border-l border-gray-200 overflow-hidden`}
       >

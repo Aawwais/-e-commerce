@@ -8,7 +8,7 @@ const MainMenuSection = () => {
     <div className="container mx-auto  ">
       <SearchBar />
       <MenuAds />
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-9">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-9">
         <MenuCard />
         <MenuCard />
         <MenuCard />
