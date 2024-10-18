@@ -61,7 +61,7 @@ const MainMenuBar = () => {
     }
   };
   return (
-    <div className="sticky top-0 -mt-[7px]">
+    <div className="sticky top-0 -mt-[7px] z-10">
       <div className="relative flex items-center bg-customBrown">
         {showLeftButton && (
           <button

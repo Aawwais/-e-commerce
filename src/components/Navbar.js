@@ -75,12 +75,12 @@ export default function Navbar() {
                 width="110"
                 src="https://hafizsweets.com/_next/image?url=https%3A%2F%2Fconsole.indolj.io%2Fupload%2F1676456372-logo-min.jpg%3Fq%3D10&w=128&q=75"
                 alt="hafiz sweets"
-                className="hidden sm:block absolute top-0 z-10 "
+                className="hidden sm:block absolute top-0 z-20 "
               /> */}
               <img
                 src="https://hafizsweets.com/_next/image?url=https%3A%2F%2Fconsole.indolj.io%2Fupload%2F1676456372-logo-min.jpg%3Fq%3D10&w=128&q=75"
                 alt="hafiz sweets"
-                className="absolute top-0 z-10 w-[90px] h-[90px] sm:w-[110px] sm:h-[110px]"
+                className="absolute top-0 z-20 w-[90px] h-[90px] sm:w-[110px] sm:h-[110px]"
               />
             </Link>
           </div>
@@ -105,13 +105,13 @@ export default function Navbar() {
       {(isCartOpen || isLocationSettingOpen) && (
         <div
           id="overlay"
-          className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out z-10"
+          className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out z-20"
           onClick={handleOutsideClick}
         />
       )}
 
       <div
-        className={`fixed z-10 right-0 top-0 transition-all duration-700 ease-in-out 
+        className={`fixed z-20 right-0 top-0 transition-all duration-700 ease-in-out 
           ${isCartOpen ? "w-80 opacity-100" : "w-0 opacity-0"}
           h-full bg-white shadow-lg border-l border-gray-200 overflow-hidden`}
       >
@@ -129,7 +129,7 @@ export default function Navbar() {
         </div>
       </div>
       <div
-        className={`fixed z-10 right-0 top-0 transition-all duration-700 ease-in-out 
+        className={`fixed z-20 right-0 top-0 transition-all duration-700 ease-in-out 
           ${isLocationSettingOpen ? "w-80 opacity-100" : "w-0 opacity-0"}
           h-full bg-white shadow-lg border-l border-gray-200 overflow-hidden`}
       >
