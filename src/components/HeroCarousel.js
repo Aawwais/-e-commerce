@@ -7,24 +7,29 @@ function HeroCarousel(props) {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 5000,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    rtl: true,
   };
+
   return (
-    <div className="slider-container">
+    <div className="slider-container relative">
       <Slider {...settings}>
-        {props.images.map((items, index) => {
+        {props.images.map((item, index) => {
           return (
             <div key={index}>
               <Image
-                src={items.image}
-                sizes="100vw"
-                height="100%"
-                width="100%"
-                className="w-full"
+                src={item.image}
+                alt={`Slide ${index + 1}`}
+                layout="responsive"
+                width={1920}
+                height={1080}
+                className="w-full h-auto"
               />
             </div>
           );

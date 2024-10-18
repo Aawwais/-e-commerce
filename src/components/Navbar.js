@@ -38,16 +38,20 @@ export default function Navbar() {
       <div class="container mx-auto">
         <div class="grid grid-cols-12 gap-4 px-3">
           <div class="col-span-9 md:col-span-5 order-2 md:order-1 flex justify-end  md:justify-start items-center">
-            <button className="flex items-center mr-5 py-4">
-              <MdLocationOn size={25} color="white" />
+            <button className="flex items-center mr-2 sm:mr-5 py-4 ">
+              <MdLocationOn
+                size={25}
+                color="white"
+                className="text-xs sm:text-base"
+              />
               <div className="flex flex-col items-start">
-                <p className="text-sm text-white">location</p>
-                <p className="text-xs text-white">location</p>
+                <p className=" text-white text-xs sm:text-sm">location</p>
+                <p className="text-xs text-white ">location</p>
               </div>
             </button>
             <Link
               href="/"
-              className="text-white ml-5 flex justify-center items-center"
+              className="text-white ml-2 sm:ml-5 flex justify-center items-center text-xs sm:text-base"
             >
               <FaPhoneAlt className="mr-1" />
               0305-9508153
@@ -55,12 +59,17 @@ export default function Navbar() {
           </div>
           <div class="col-span-3 md:col-span-2 order-1 md:order-2 flex justify-start  md:justify-center  items-center">
             <Link href="/">
-              <Image
+              {/* <Image
                 height="110"
                 width="110"
                 src="https://hafizsweets.com/_next/image?url=https%3A%2F%2Fconsole.indolj.io%2Fupload%2F1676456372-logo-min.jpg%3Fq%3D10&w=128&q=75"
                 alt="hafiz sweets"
-                className="absolute top-0 z-10"
+                className="hidden sm:block absolute top-0 z-10 "
+              /> */}
+              <img
+                src="https://hafizsweets.com/_next/image?url=https%3A%2F%2Fconsole.indolj.io%2Fupload%2F1676456372-logo-min.jpg%3Fq%3D10&w=128&q=75"
+                alt="hafiz sweets"
+                className="absolute top-0 z-10 w-[90px] h-[90px] sm:w-[110px] sm:h-[110px]"
               />
             </Link>
           </div>

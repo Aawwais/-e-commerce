@@ -15,15 +15,19 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
 .slider-container .slick-arrow {
   display: none !important;
 }
+
 .slider-container .slick-dots {
   bottom: 30px !important;
 }
+
 .slider-container .slick-dots li button::before {
   content: none !important;
 }
+
 .slider-container .slick-dots li button {
   background: #fff !important;
   border-radius: 50%;
@@ -31,9 +35,11 @@
   height: 8px !important;
   opacity: 0.5;
 }
+
 .slider-container .slick-dots .slick-active button {
   opacity: 1;
 }
+
 .slider-container .slick-dots li {
   width: 6px !important;
   height: 0px !important;
